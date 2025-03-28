@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="JamSettings" load_steps=5 format=3 uid="uid://v7ah7o4ypqv5"]
+
+[ext_resource type="Script" uid="uid://oxut513d2dhw" path="res://src/jam_settings.gd" id="1_akcgr"]
+[ext_resource type="PackedScene" uid="uid://cfkgai1x8vsf4" path="res://ui/screens/credits/credits_menu.tscn" id="1_xtdjy"]
+[ext_resource type="PackedScene" uid="uid://bon0p0k4pwl7p" path="res://ui/screens/main_menu/main_menu.tscn" id="2_r764v"]
+[ext_resource type="Resource" uid="uid://ea27a1sp01an" path="res://resources/default_fade.tres" id="2_ycxi4"]
+
+[resource]
+script = ExtResource("1_akcgr")
+default_scene_transition = ExtResource("2_ycxi4")
+main_menu_scene = ExtResource("2_r764v")
+credits_scene = ExtResource("1_xtdjy")
+metadata/_custom_type_script = "uid://oxut513d2dhw"

@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmgv2ax1c7oav"]
+
+[ext_resource type="Texture2D" uid="uid://dinlaomurc53k" path="res://prototype_assets/large_button_texture.png" id="1_6abnq"]
+[ext_resource type="Texture2D" uid="uid://c8nk7kajwj2mk" path="res://prototype_assets/large_button_texture_hovered.png" id="2_hal8v"]
+[ext_resource type="Script" uid="uid://dpucmjhjyy7vg" path="res://ui/elements/main_menu_button/main_menu_button.gd" id="3_0yw6i"]
+[ext_resource type="LabelSettings" uid="uid://dr5n6aixf165u" path="res://ui/elements/main_menu_button/main_menu_label_settings.tres" id="4_0yw6i"]
+[ext_resource type="AudioStream" uid="uid://ci26h1mflcp5u" path="res://prototype_assets/UIClick_UI Click 33_CB Sounddesign_ACTIVATION2.wav" id="5_0yw6i"]
+[ext_resource type="AudioStream" uid="uid://bw8o5kh8ox1xt" path="res://prototype_assets/UIAlert_Confirm Middle 12_RSCPC_USIN.wav" id="6_p056g"]
+
+[node name="MainMenuButton" type="TextureButton" node_paths=PackedStringArray("label")]
+texture_normal = ExtResource("1_6abnq")
+texture_hover = ExtResource("2_hal8v")
+stretch_mode = 5
+script = ExtResource("3_0yw6i")
+label_text = "Wowser!"
+label_settings = ExtResource("4_0yw6i")
+hover_sound = ExtResource("5_0yw6i")
+click_sound = ExtResource("6_p056g")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.5
+offset_top = -10.0
+offset_right = 30.5
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Wowser!"
+label_settings = ExtResource("4_0yw6i")

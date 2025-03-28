@@ -1,0 +1,57 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Jam Template"
+run/main_scene="uid://c5jgsl1301fs0"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+
+[audio]
+
+buses/default_bus_layout="res://resources/default_bus_layout.tres"
+
+[autoload]
+
+SoundManager="*res://src/jam_sound_manager.gd"
+SceneManager="*res://src/jam_scene_manager.gd"
+Global="*res://src/global.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/sound_manager/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "gray",
+"res://prototype_assets/": "gray",
+"res://resources/": "yellow",
+"res://scenes/": "blue",
+"res://src/": "gray",
+"res://ui/": "green",
+"res://ui/elements/": "teal",
+"res://ui/screens/": "green"
+}
+
+[gui]
+
+theme/custom_font="uid://dwr70xawbgxry"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
