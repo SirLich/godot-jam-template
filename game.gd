@@ -8,4 +8,5 @@ class_name Game
 @export var transition_slot : Node
 
 func _ready() -> void:
+	SoundManager.play_music(Global.settings.main_menu_music)
 	SceneManager.change_to_packed(default_scene)
