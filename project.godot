@@ -49,6 +49,7 @@ folder_colors={
 
 [gui]
 
+theme/custom="uid://6mcfjc87cow6"
 theme/custom_font="uid://dwr70xawbgxry"
 
 [rendering]

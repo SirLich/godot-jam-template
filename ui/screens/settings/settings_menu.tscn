@@ -43,12 +43,20 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 55.0
-offset_top = 57.0
-offset_right = -417.0
-offset_bottom = -47.0
+offset_left = 312.0
+offset_top = 108.0
+offset_right = -699.0
+offset_bottom = -61.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
