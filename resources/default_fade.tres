@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_04ujk")
 fade_color = Color(0, 0, 0, 1)
-fade_in_time = 2.0
-fade_out_time = 2.0
+fade_in_time = 0.2
+fade_out_time = 0.5
 fade_scene = ExtResource("1_62e3p")
 metadata/_custom_type_script = "uid://d3pr4sbgjj0l5"

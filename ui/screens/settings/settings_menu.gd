@@ -1,13 +1,9 @@
 extends Control
+class_name SettingsMenu
 
-@export_file() var credits_file
-
-@export_group("Nodes")
-@export var credits_text : MarkdownLabel
 @export var back_button : BaseButton
 
 func _ready() -> void:
-	credits_text.display_file(credits_file)
 	back_button.pressed.connect(on_back_pressed)
 
 func on_back_pressed():

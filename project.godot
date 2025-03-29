@@ -20,7 +20,7 @@ buses/default_bus_layout="res://resources/default_bus_layout.tres"
 
 [autoload]
 
-SoundManager="*res://src/jam_sound_manager.gd"
+SoundManager="*res://addons/sound_manager/sound_manager.gd"
 SceneManager="*res://src/jam_scene_manager.gd"
 Global="*res://src/global.gd"
 
@@ -32,7 +32,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/sound_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/markdownlabel/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
 
 [file_customization]
 

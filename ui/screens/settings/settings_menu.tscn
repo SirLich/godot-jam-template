@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://vkov8p7w8kjb"]
+
+[ext_resource type="Script" uid="uid://7o48h70fypql" path="res://ui/screens/settings/settings_menu.gd" id="1_no57w"]
+[ext_resource type="Texture2D" uid="uid://bpc8m8xk7kyxg" path="res://prototype_assets/main_menu_hero.png" id="2_wb1qp"]
+[ext_resource type="PackedScene" uid="uid://bum01orwklqho" path="res://ui/elements/buttons/small_button.tscn" id="3_no57w"]
+
+[node name="SettingsMenu" type="Control" node_paths=PackedStringArray("back_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_no57w")
+back_button = NodePath("BackButton")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wb1qp")
+stretch_mode = 2
+
+[node name="BackButton" parent="." instance=ExtResource("3_no57w")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.957292
+anchor_top = 0.937037
+anchor_right = 0.957292
+anchor_bottom = 0.937037
+offset_left = -300.0
+offset_top = -120.0
+grow_horizontal = 0
+grow_vertical = 0
+label_text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = 57.0
+offset_right = -417.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
