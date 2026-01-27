@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bum01orwklqho" path="res://ui/elements/buttons/small_button.tscn" id="1_wiqq7"]
 
 [node name="PauseScreen" type="Control" unique_id=1064965017 node_paths=PackedStringArray("continue_button", "main_menu_button")]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

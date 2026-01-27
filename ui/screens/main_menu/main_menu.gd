@@ -14,6 +14,7 @@ func _ready() -> void:
 	exit_button.pressed.connect(on_exit_pressed)
 
 func on_play_pressed():
+	SoundManager.play_music(Global.settings.game_music, 2.0)
 	SceneManager.change_to_packed_with_default_transition(Global.settings.game_scene)
 	
 func on_settings_pressed():

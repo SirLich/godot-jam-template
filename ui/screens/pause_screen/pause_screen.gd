@@ -8,8 +8,8 @@ func _ready() -> void:
 	main_menu_button.pressed.connect(on_main_menu_pressed)
 
 func on_continue_pressed():
-	self.queue_free()
+	get_parent().unpause()
 	
 func on_main_menu_pressed():
+	get_parent().unpause()
 	SceneManager.change_to_packed_with_default_transition(Global.settings.main_menu_scene)
-	self.queue_free()
