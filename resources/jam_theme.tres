@@ -15,3 +15,8 @@ texture_margin_bottom = 5.0
 
 [resource]
 HSlider/styles/slider = SubResource("StyleBoxTexture_rpmni")
+MarginContainer/constants/margin_bottom = 25
+MarginContainer/constants/margin_left = 25
+MarginContainer/constants/margin_right = 25
+MarginContainer/constants/margin_top = 25
+VBoxContainer/constants/separation = 25

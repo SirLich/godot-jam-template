@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bpc8m8xk7kyxg" path="res://prototype_assets/main_menu_hero.png" id="1_ou0aq"]
 [ext_resource type="PackedScene" uid="uid://bmgv2ax1c7oav" path="res://ui/elements/buttons/large_button.tscn" id="2_qoncc"]
 
-[node name="MainMenu" type="Control" unique_id=1606845327 node_paths=PackedStringArray("play_button", "settings_button", "credits_button")]
+[node name="MainMenu" type="Control" unique_id=1606845327 node_paths=PackedStringArray("play_button", "settings_button", "credits_button", "exit_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,6 +15,7 @@ script = ExtResource("1_aiivd")
 play_button = NodePath("VBoxContainer/PlayButton")
 settings_button = NodePath("VBoxContainer/SettingsButton")
 credits_button = NodePath("VBoxContainer/CreditsButton")
+exit_button = NodePath("VBoxContainer/ExitButton")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1186571086]
 layout_mode = 1
@@ -38,7 +39,6 @@ offset_right = -117.0
 offset_bottom = -144.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_constants/separation = 40
 alignment = 1
 
 [node name="PlayButton" parent="VBoxContainer" unique_id=616884618 instance=ExtResource("2_qoncc")]
@@ -55,3 +55,8 @@ label_text = "Settings"
 layout_mode = 2
 stretch_mode = 0
 label_text = "Credits"
+
+[node name="ExitButton" parent="VBoxContainer" unique_id=976464029 instance=ExtResource("2_qoncc")]
+layout_mode = 2
+stretch_mode = 0
+label_text = "Exit"

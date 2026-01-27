@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c53ieyaxishfg"]
+
+[ext_resource type="Script" uid="uid://bi1meyb8dvk4s" path="res://scenes/pause_handler/pause_handler.gd" id="1_wraqq"]
+
+[node name="PauseHandler" type="CanvasLayer" unique_id=796881595]
+script = ExtResource("1_wraqq")

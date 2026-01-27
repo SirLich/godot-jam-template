@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dubc1qild7qo7"]
+
+[ext_resource type="Script" uid="uid://ds3mvd8utsb67" path="res://ui/screens/pause_screen/pause_screen.gd" id="1_c0vf7"]
+[ext_resource type="PackedScene" uid="uid://bum01orwklqho" path="res://ui/elements/buttons/small_button.tscn" id="1_wiqq7"]
+
+[node name="PauseScreen" type="Control" unique_id=1064965017 node_paths=PackedStringArray("continue_button", "main_menu_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c0vf7")
+continue_button = NodePath("PanelContainer/MarginContainer/VBoxContainer/ContinueButton")
+main_menu_button = NodePath("PanelContainer/MarginContainer/VBoxContainer/MainMenuButton")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1402389075]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=468910212]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1822339210]
+layout_mode = 2
+
+[node name="ContinueButton" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2026460345 instance=ExtResource("1_wiqq7")]
+layout_mode = 2
+label_text = "Continue"
+
+[node name="MainMenuButton" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2092326901 instance=ExtResource("1_wiqq7")]
+layout_mode = 2
+label_text = "Main Menu"

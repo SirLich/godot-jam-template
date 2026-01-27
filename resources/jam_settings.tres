@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://bon0p0k4pwl7p" path="res://ui/screens/main_menu/main_menu.tscn" id="2_r764v"]
 [ext_resource type="Resource" uid="uid://ea27a1sp01an" path="res://resources/default_fade.tres" id="2_ycxi4"]
 [ext_resource type="AudioStream" uid="uid://dst56ae6luv43" path="res://prototype_assets/1978810-Sergey_Gulevich-Retro Electro.mp3" id="3_0i6q5"]
+[ext_resource type="PackedScene" uid="uid://bn0m0putc0cvc" path="res://scenes/game/game.tscn" id="4_0f7l2"]
 [ext_resource type="PackedScene" uid="uid://vkov8p7w8kjb" path="res://ui/screens/settings/settings_menu.tscn" id="5_ycxi4"]
+[ext_resource type="PackedScene" uid="uid://dubc1qild7qo7" path="res://ui/screens/pause_screen/pause_screen.tscn" id="6_donah"]
 
 [resource]
 script = ExtResource("1_akcgr")
@@ -15,4 +17,6 @@ game_music = ExtResource("3_0i6q5")
 main_menu_scene = ExtResource("2_r764v")
 credits_scene = ExtResource("1_xtdjy")
 settings_scene = ExtResource("5_ycxi4")
+game_scene = ExtResource("4_0f7l2")
+pause_scene = ExtResource("6_donah")
 metadata/_custom_type_script = "uid://oxut513d2dhw"

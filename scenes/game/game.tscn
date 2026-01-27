@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bn0m0putc0cvc"]
+
+[ext_resource type="Script" uid="uid://b61vnpn516s73" path="res://scenes/game/game.gd" id="1_sul5r"]
+[ext_resource type="PackedScene" uid="uid://c53ieyaxishfg" path="res://scenes/pause_handler/pause_handler.tscn" id="2_7h61r"]
+
+[node name="Game" type="Node2D" unique_id=1234032883]
+script = ExtResource("1_sul5r")
+
+[node name="PauseHandler" parent="." unique_id=796881595 instance=ExtResource("2_7h61r")]
