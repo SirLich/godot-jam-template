@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cfkgai1x8vsf4"]
+[gd_scene format=3 uid="uid://cfkgai1x8vsf4"]
 
 [ext_resource type="Script" uid="uid://u5g37c4krr2h" path="res://ui/screens/credits/credits_menu.gd" id="1_346oy"]
 [ext_resource type="Texture2D" uid="uid://bpc8m8xk7kyxg" path="res://prototype_assets/main_menu_hero.png" id="1_w8los"]
@@ -14,64 +14,28 @@
 [sub_resource type="Resource" id="Resource_2adsg"]
 resource_local_to_scene = true
 script = ExtResource("4_07mnd")
-font_size = 2.285
-is_bold = false
-is_italic = false
-is_underlined = false
-override_font_color = false
-font_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Resource" id="Resource_4cih0"]
 resource_local_to_scene = true
 script = ExtResource("5_trayc")
-font_size = 1.714
-is_bold = false
-is_italic = false
-is_underlined = false
-override_font_color = false
-font_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Resource" id="Resource_u4ocy"]
 resource_local_to_scene = true
 script = ExtResource("6_k4ux7")
-font_size = 1.428
-is_bold = false
-is_italic = false
-is_underlined = false
-override_font_color = false
-font_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Resource" id="Resource_fdr4j"]
 resource_local_to_scene = true
 script = ExtResource("7_j6obh")
-font_size = 1.142
-is_bold = false
-is_italic = false
-is_underlined = false
-override_font_color = false
-font_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Resource" id="Resource_1bgmp"]
 resource_local_to_scene = true
 script = ExtResource("8_xg8m3")
-font_size = 1.0
-is_bold = false
-is_italic = false
-is_underlined = false
-override_font_color = false
-font_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Resource" id="Resource_rcbv1"]
 resource_local_to_scene = true
 script = ExtResource("9_g7ta2")
-font_size = 0.857
-is_bold = false
-is_italic = false
-is_underlined = false
-override_font_color = false
-font_color = Color(1, 1, 1, 1)
 
-[node name="CreditsMenu" type="Control" node_paths=PackedStringArray("credits_text", "back_button")]
+[node name="CreditsMenu" type="Control" unique_id=2071049259 node_paths=PackedStringArray("credits_text", "back_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,7 +47,7 @@ credits_file = "res://credits.md"
 credits_text = NodePath("ScrollContainer/CreditsText")
 back_button = NodePath("VBoxContainer/BackButton")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1580507757]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -93,7 +57,7 @@ grow_vertical = 2
 texture = ExtResource("1_w8los")
 stretch_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=520453176]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.028125
@@ -104,7 +68,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="CreditsText" type="RichTextLabel" parent="ScrollContainer"]
+[node name="CreditsText" type="RichTextLabel" parent="ScrollContainer" unique_id=1107777884]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -120,7 +84,7 @@ h6 = SubResource("Resource_rcbv1")
 metadata/_custom_type_script = "uid://dbap0gqox0ty1"
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2061819961]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.662
@@ -135,7 +99,7 @@ grow_vertical = 2
 theme_override_constants/separation = 40
 alignment = 2
 
-[node name="BackButton" parent="VBoxContainer" instance=ExtResource("3_346oy")]
+[node name="BackButton" parent="VBoxContainer" unique_id=746397855 instance=ExtResource("3_346oy")]
 layout_mode = 2
 size_flags_horizontal = 8
 label_text = "Back"

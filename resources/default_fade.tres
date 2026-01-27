@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="FadeTransition" load_steps=3 format=3 uid="uid://ea27a1sp01an"]
+[gd_resource type="Resource" script_class="FadeTransition" format=3 uid="uid://ea27a1sp01an"]
 
 [ext_resource type="PackedScene" uid="uid://dpdaoykpvq4ln" path="res://scenes/transitions/fade_transition/fade_transition.tscn" id="1_62e3p"]
 [ext_resource type="Script" uid="uid://d3pr4sbgjj0l5" path="res://scenes/transitions/fade_transition/fade_transition.gd" id="2_04ujk"]
 
 [resource]
 script = ExtResource("2_04ujk")
-fade_color = Color(0, 0, 0, 1)
 fade_in_time = 0.2
 fade_out_time = 0.5
 fade_scene = ExtResource("1_62e3p")

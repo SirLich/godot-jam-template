@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="JamSettings" load_steps=7 format=3 uid="uid://v7ah7o4ypqv5"]
+[gd_resource type="Resource" script_class="JamSettings" format=3 uid="uid://v7ah7o4ypqv5"]
 
 [ext_resource type="Script" uid="uid://oxut513d2dhw" path="res://src/jam_settings.gd" id="1_akcgr"]
 [ext_resource type="PackedScene" uid="uid://cfkgai1x8vsf4" path="res://ui/screens/credits/credits_menu.tscn" id="1_xtdjy"]

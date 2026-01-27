@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5jgsl1301fs0"]
+[gd_scene format=3 uid="uid://c5jgsl1301fs0"]
 
 [ext_resource type="Script" uid="uid://bg8hqo5runn7m" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://bon0p0k4pwl7p" path="res://ui/screens/main_menu/main_menu.tscn" id="2_e2o6t"]
 
-[node name="Game" type="Node" node_paths=PackedStringArray("scene_slot", "transition_slot")]
+[node name="Game" type="Node" unique_id=745604899 node_paths=PackedStringArray("scene_slot", "transition_slot")]
 script = ExtResource("1_80nbo")
 default_scene = ExtResource("2_e2o6t")
 scene_slot = NodePath("SceneSlot")
 transition_slot = NodePath("TransitionSlot")
 
-[node name="SceneSlot" type="Node" parent="."]
+[node name="SceneSlot" type="Node" parent="." unique_id=1187204569]
 
-[node name="TransitionSlot" type="Node" parent="."]
+[node name="TransitionSlot" type="Node" parent="." unique_id=1978697132]

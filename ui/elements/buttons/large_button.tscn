@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmgv2ax1c7oav"]
+[gd_scene format=3 uid="uid://bmgv2ax1c7oav"]
 
 [ext_resource type="Texture2D" uid="uid://dinlaomurc53k" path="res://prototype_assets/large_button_texture.png" id="1_6abnq"]
 [ext_resource type="Texture2D" uid="uid://c8nk7kajwj2mk" path="res://prototype_assets/large_button_texture_hovered.png" id="2_hal8v"]
@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://drm1gt38qw046" path="res://prototype_assets/switch_on_042.wav" id="6_vkm5x"]
 [ext_resource type="AudioStream" uid="uid://0vfi8xuygl1e" path="res://prototype_assets/light_switch_019.wav" id="7_nf1lu"]
 
-[node name="LargeButton" type="TextureButton" node_paths=PackedStringArray("label")]
+[node name="LargeButton" type="TextureButton" unique_id=976464029 node_paths=PackedStringArray("label")]
 texture_normal = ExtResource("1_6abnq")
 texture_hover = ExtResource("2_hal8v")
 stretch_mode = 5
@@ -20,7 +20,7 @@ hover_start_sound = ExtResource("6_vkm5x")
 hover_end_sound = ExtResource("7_nf1lu")
 label = NodePath("Label")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=2005700678]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

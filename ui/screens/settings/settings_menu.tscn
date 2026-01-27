@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://vkov8p7w8kjb"]
+[gd_scene format=3 uid="uid://vkov8p7w8kjb"]
 
 [ext_resource type="Script" uid="uid://7o48h70fypql" path="res://ui/screens/settings/settings_menu.gd" id="1_no57w"]
 [ext_resource type="Texture2D" uid="uid://bpc8m8xk7kyxg" path="res://prototype_assets/main_menu_hero.png" id="2_wb1qp"]
 [ext_resource type="PackedScene" uid="uid://bum01orwklqho" path="res://ui/elements/buttons/small_button.tscn" id="3_no57w"]
 [ext_resource type="PackedScene" uid="uid://b6oh2c1ue63aa" path="res://ui/elements/volume_slider/volume_slider.tscn" id="4_wb1qp"]
 
-[node name="SettingsMenu" type="Control" node_paths=PackedStringArray("back_button")]
+[node name="SettingsMenu" type="Control" unique_id=1378592612 node_paths=PackedStringArray("back_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,7 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_no57w")
 back_button = NodePath("BackButton")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1555840208]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,7 +25,7 @@ grow_vertical = 2
 texture = ExtResource("2_wb1qp")
 stretch_mode = 2
 
-[node name="BackButton" parent="." instance=ExtResource("3_no57w")]
+[node name="BackButton" parent="." unique_id=1428260465 instance=ExtResource("3_no57w")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.957292
@@ -39,7 +39,7 @@ grow_vertical = 0
 label_text = "Back"
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=311526514]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,18 +51,18 @@ offset_bottom = -61.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MasterVolume" parent="VBoxContainer" instance=ExtResource("4_wb1qp")]
+[node name="MasterVolume" parent="VBoxContainer" unique_id=580081299 instance=ExtResource("4_wb1qp")]
 layout_mode = 2
 default_volume = 0.8
 bus_name = "Master"
 label_text = "Volume"
 
-[node name="SoundVolume" parent="VBoxContainer" instance=ExtResource("4_wb1qp")]
+[node name="SoundVolume" parent="VBoxContainer" unique_id=358383432 instance=ExtResource("4_wb1qp")]
 layout_mode = 2
 bus_name = "Music"
 label_text = "Music"
 
-[node name="MusicVolume" parent="VBoxContainer" instance=ExtResource("4_wb1qp")]
+[node name="MusicVolume" parent="VBoxContainer" unique_id=327706207 instance=ExtResource("4_wb1qp")]
 layout_mode = 2
 bus_name = "Sounds"
 label_text = "SFX"

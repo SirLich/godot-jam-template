@@ -1,18 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6oh2c1ue63aa"]
+[gd_scene format=3 uid="uid://b6oh2c1ue63aa"]
 
 [ext_resource type="Script" uid="uid://buy2gsda2raqa" path="res://ui/elements/volume_slider/volume_slider.gd" id="1_rm1uh"]
 
-[node name="VolumeSlider" type="HBoxContainer" node_paths=PackedStringArray("label", "slider")]
+[node name="VolumeSlider" type="HBoxContainer" unique_id=208208607 node_paths=PackedStringArray("label", "slider")]
 script = ExtResource("1_rm1uh")
 label = NodePath("Label")
 slider = NodePath("MasterVolumeSlider")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=745962400]
 layout_mode = 2
 text = "Master Volume"
 
-[node name="MasterVolumeSlider" type="HSlider" parent="."]
+[node name="MasterVolumeSlider" type="HSlider" parent="." unique_id=1788184391]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.001
+value = 1.0
