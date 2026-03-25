@@ -1,0 +1,15 @@
+[[dependencies]]
+name = "resonate"
+url = "https://gitlab.com/widgitgaming/godot/resonate"
+version = "refs/heads/main"
+version_lock = "4b82794d015a176231bbfe39a100e68e9f3d0da1"
+destination = "addons/resonate"
+source = "addons/resonate"
+
+[[dependencies]]
+name = "editor-tweaks"
+url = "https://github.com/SirLich/godot-editor-tweaks"
+version = "refs/heads/main"
+version_lock = "1cb86de593973f5dc5ffe3a910bac301c4ee9098"
+destination = "addons/editor_tweaks"
+source = "addons/editor_tweaks"

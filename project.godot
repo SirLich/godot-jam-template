@@ -17,12 +17,19 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 [audio]
 
 buses/default_bus_layout="res://resources/default_bus_layout.tres"
+manager/sound/bus="Sound"
+manager/sound/pool_1D_size=16
+manager/sound/pool_2D_size=16
+manager/sound/pool_3D_size=16
+manager/sound/max_polyphony=32
+manager/music/bus="Music"
 
 [autoload]
 
-SoundManager="*uid://dspakd4xcmq6w"
+SoundManager="*uid://sgxo2a017ehn"
 SceneManager="*res://src/jam_scene_manager.gd"
 Global="*res://src/global.gd"
+MusicManager="*uid://b3612i7nyqsva"
 
 [display]
 
@@ -32,7 +39,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/markdownlabel/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/editor_tweaks/plugin.cfg", "res://addons/markdownlabel/plugin.cfg", "res://addons/resonate/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
 
 [file_customization]
 
