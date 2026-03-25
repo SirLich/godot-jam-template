@@ -31,3 +31,8 @@ The template comes with a settings file `res://jam_settings.tres` which other sy
 
 [Godot Sound Manager](https://github.com/nathanhoad/godot_sound_manager)
 [Markdown Label](https://github.com/daenvil/MarkdownLabel)
+
+## Hyrax
+
+This plugin manages dependencies via [Hyrax](https://github.com/SirLich/hyrax). Dependencies have
+been inlined (checked into version control), but Hyrax can be used to update them if desired. See `hyrax.toml`.
