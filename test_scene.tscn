@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://oyixdgf2mw5h"]
+
+[ext_resource type="Theme" uid="uid://bwgx0ahisnkhw" path="res://ui/empty_theme.tres" id="1_uhqqe"]
+[ext_resource type="Script" uid="uid://cjmmhbp1b5312" path="res://addons/StyleBoxFancy/StyleBorder.gd" id="2_coq8p"]
+[ext_resource type="Script" uid="uid://bkl6g25jwb47h" path="res://addons/StyleBoxFancy/StyleBoxFancy.gd" id="3_2nij2"]
+[ext_resource type="Texture2D" uid="uid://bpc8m8xk7kyxg" path="res://prototype_assets/main_menu_hero.png" id="3_sasra"]
+
+[sub_resource type="Resource" id="Resource_coq8p"]
+script = ExtResource("2_coq8p")
+color = Color(1, 0.73294634, 0.5705486, 1)
+width_left = 5
+width_top = 1
+width_right = 5
+width_bottom = 1
+inset_left = 10
+inset_top = 10
+inset_right = 10
+inset_bottom = 10
+metadata/_custom_type_script = "uid://cjmmhbp1b5312"
+
+[sub_resource type="StyleBox" id="StyleBox_8pr8v"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("3_2nij2")
+texture = ExtResource("3_sasra")
+borders = Array[ExtResource("2_coq8p")]([SubResource("Resource_coq8p")])
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_curvature_top_left = -0.4850000000000003
+corner_curvature_top_right = -0.7249999999999996
+corner_curvature_bottom_right = -1.1399999999999997
+corner_curvature_bottom_left = -0.8150000000000004
+metadata/_custom_type_script = "uid://bkl6g25jwb47h"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhqqe"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sasra"]
+texture = ExtResource("3_sasra")
+
+[node name="TestScene" type="Control" unique_id=1871218284]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_uhqqe")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=483645946]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 1193.0
+offset_bottom = 584.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=109662059]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=989070422]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=596413975]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=332444132]
+layout_mode = 2
+theme_type_variation = &"Header"
+text = "HELLO"
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=477900525]
+layout_mode = 2
+text = "HELLO"
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=643238895]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer" unique_id=1794769890]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=1321024695]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=818368273]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBox_8pr8v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uhqqe")
+text = "Hello!"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=409996762]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_sasra")
+text = "Hello!"
+
+[node name="Button3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1440542752]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Hello!"
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=508454285]
+layout_mode = 2
+size_flags_horizontal = 3

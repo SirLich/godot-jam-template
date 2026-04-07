@@ -13,3 +13,11 @@ version = "refs/heads/main"
 version_lock = "1cb86de593973f5dc5ffe3a910bac301c4ee9098"
 destination = "addons/editor_tweaks"
 source = "addons/editor_tweaks"
+
+[[dependencies]]
+name = "stylebox-fancy"
+url = "https://github.com/xZpookyx/StyleBoxFancy.git"
+version = "refs/heads/main"
+version_lock = "8e6f596c10048b3a58c34c20c5cdf6ccc7e2e992"
+destination = "addons/StyleBoxFancy"
+source = "addons/StyleBoxFancy"

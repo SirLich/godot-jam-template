@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Jam Template"
+config/tags=PackedStringArray("project")
 run/main_scene="uid://c5jgsl1301fs0"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
@@ -26,9 +27,9 @@ manager/music/bus="Music"
 
 [autoload]
 
-SoundManager="*uid://sgxo2a017ehn"
 SceneManager="*res://src/jam_scene_manager.gd"
 Global="*res://src/global.gd"
+SoundManager="*uid://dspakd4xcmq6w"
 MusicManager="*uid://b3612i7nyqsva"
 
 [display]
@@ -39,7 +40,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/editor_tweaks/plugin.cfg", "res://addons/markdownlabel/plugin.cfg", "res://addons/resonate/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/StyleBoxFancy/plugin.cfg", "res://addons/editor_tweaks/plugin.cfg", "res://addons/markdownlabel/plugin.cfg", "res://addons/resonate/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
 
 [file_customization]
 
@@ -56,7 +57,7 @@ folder_colors={
 
 [gui]
 
-theme/custom="uid://6mcfjc87cow6"
+theme/custom="uid://cxoonedw1rmpt"
 theme/custom_font="uid://dwr70xawbgxry"
 
 [input]

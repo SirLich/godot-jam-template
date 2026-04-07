@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dwr70xawbgxry"
-path="res://.godot/imported/Prototype.ttf-b8afc2fb9090bcd8b8664b833f7749c9.fontdata"
+uid="uid://q6jokb0qcg5d"
+path="res://.godot/imported/SANDEN.ttf-42a3e09966e22fe6f832c6f79d3cb443.fontdata"
 
 [deps]
 
-source_file="res://prototype_assets/fonts/Prototype.ttf"
-dest_files=["res://.godot/imported/Prototype.ttf-b8afc2fb9090bcd8b8664b833f7749c9.fontdata"]
+source_file="res://assets/fonts/SANDEN.ttf"
+dest_files=["res://.godot/imported/SANDEN.ttf-42a3e09966e22fe6f832c6f79d3cb443.fontdata"]
 
 [params]
 
