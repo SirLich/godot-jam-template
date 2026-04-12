@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7b75mcbfl3w0"]
 
-[ext_resource type="Script" uid="uid://cug2hr3ko8ctl" path="res://addons/StyleBoxFancy/inspector/corner editor container/tooltip.gd" id="1_knud1"]
+[ext_resource type="Script" uid="uid://cug2hr3ko8ctl" path="res://addons/StyleboxFancy/inspector/corner editor container/tooltip.gd" id="1_knud1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrae1"]
 content_margin_left = 4.0

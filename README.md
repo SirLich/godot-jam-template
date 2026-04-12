@@ -2,9 +2,19 @@
 
 A template for Game Jams. Not all jams allow templates, so do your homework!
 
-The code/structure of the project is yours to use under the MIT license. The assets themselves should be removed, as you create suitable replacements.
+The code/structure of the project is yours to use under the MIT license. The assets themselves should be removed, as you create suitable replacements. I have the rights to these assets -you don't.
 
 This template was last updated for Godot 4.6
+
+## Stability Warning
+
+This is my own template, for my own jams and small projects. Everything here is subject to change.
+
+## Theme System 
+
+The template ships with a few libraries to help you quickly theme your games UI.
+- StyleboxFancy: This allows you to create styleboxes that mix textures and colors/outlines.
+- QuickTheme: This allows you to generate the full theme from a few exported members.
 
 ## Handling Assets
 
@@ -25,7 +35,6 @@ The template comes with a settings file `res://jam_settings.tres` which other sy
 - Scene transition system
 - UI theme in place, ready for configuration
 - Credits system, which reads from a markdown file
-- 
 
 ## Plugins / Additions
 

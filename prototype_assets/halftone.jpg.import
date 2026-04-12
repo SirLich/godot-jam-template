@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kxt7ientk4ju"
-path="res://.godot/imported/br.svg-5bd994883d096f5bdd255a9e19463564.ctex"
+uid="uid://7cooekajnh76"
+path="res://.godot/imported/halftone.jpg-91f1d1a967d1fddc2d3cd379edd49194.ctex"
 metadata={
-"has_editor_variant": true,
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/StyleboxFancy/inspector/corner editor container/icons/br.svg"
-dest_files=["res://.godot/imported/br.svg-5bd994883d096f5bdd255a9e19463564.ctex"]
+source_file="res://prototype_assets/halftone.jpg"
+dest_files=["res://.godot/imported/halftone.jpg-91f1d1a967d1fddc2d3cd379edd49194.ctex"]
 
 [params]
 
@@ -39,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=true
-editor/convert_colors_with_editor_theme=true

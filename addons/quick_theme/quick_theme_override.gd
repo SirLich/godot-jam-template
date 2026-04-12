@@ -1,5 +1,5 @@
 extends Resource
-class_name ThemeOverride
+class_name QuickThemeOverride
 
 ## A tint to apply to the override
 @export var tint : Color = Color.WHITE

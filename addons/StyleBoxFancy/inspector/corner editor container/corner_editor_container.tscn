@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://df2kverp315t8"]
 
-[ext_resource type="Script" uid="uid://dsf52vsvsogxb" path="res://addons/StyleBoxFancy/inspector/corner editor container/corner_editor_container.gd" id="1_r6tm4"]
-[ext_resource type="Script" uid="uid://cqtss7efnhjtg" path="res://addons/StyleBoxFancy/inspector/corner editor container/tooltip_button.gd" id="2_f6m2c"]
-[ext_resource type="Texture2D" uid="uid://b1qswoa82s873" path="res://addons/StyleBoxFancy/inspector/corner editor container/icons/tl.svg" id="2_u8m6u"]
-[ext_resource type="PackedScene" uid="uid://b7b75mcbfl3w0" path="res://addons/StyleBoxFancy/inspector/corner editor container/tooltip.tscn" id="3_nrcq3"]
-[ext_resource type="Script" uid="uid://dn8hu40tetyai" path="res://addons/StyleBoxFancy/inspector/corner editor container/link_button.gd" id="3_u8m6u"]
-[ext_resource type="Texture2D" uid="uid://ci5gin4bu8hir" path="res://addons/StyleBoxFancy/inspector/corner editor container/icons/tr.svg" id="5_q644r"]
-[ext_resource type="Texture2D" uid="uid://bftee835eeax6" path="res://addons/StyleBoxFancy/inspector/corner editor container/icons/bl.svg" id="6_f6m2c"]
-[ext_resource type="Texture2D" uid="uid://kxt7ientk4ju" path="res://addons/StyleBoxFancy/inspector/corner editor container/icons/br.svg" id="7_nrcq3"]
-[ext_resource type="Script" uid="uid://mtdn6ihe1bj3" path="res://addons/StyleBoxFancy/inspector/corner editor container/curvature_preset_button.gd" id="8_f6m2c"]
+[ext_resource type="Script" uid="uid://dsf52vsvsogxb" path="res://addons/StyleboxFancy/inspector/corner editor container/corner_editor_container.gd" id="1_r6tm4"]
+[ext_resource type="Script" uid="uid://cqtss7efnhjtg" path="res://addons/StyleboxFancy/inspector/corner editor container/tooltip_button.gd" id="2_f6m2c"]
+[ext_resource type="Texture2D" uid="uid://b1qswoa82s873" path="res://addons/StyleboxFancy/inspector/corner editor container/icons/tl.svg" id="2_u8m6u"]
+[ext_resource type="PackedScene" uid="uid://b7b75mcbfl3w0" path="res://addons/StyleboxFancy/inspector/corner editor container/tooltip.tscn" id="3_nrcq3"]
+[ext_resource type="Script" uid="uid://dn8hu40tetyai" path="res://addons/StyleboxFancy/inspector/corner editor container/link_button.gd" id="3_u8m6u"]
+[ext_resource type="Texture2D" uid="uid://ci5gin4bu8hir" path="res://addons/StyleboxFancy/inspector/corner editor container/icons/tr.svg" id="5_q644r"]
+[ext_resource type="Texture2D" uid="uid://bftee835eeax6" path="res://addons/StyleboxFancy/inspector/corner editor container/icons/bl.svg" id="6_f6m2c"]
+[ext_resource type="Texture2D" uid="uid://kxt7ientk4ju" path="res://addons/StyleboxFancy/inspector/corner editor container/icons/br.svg" id="7_nrcq3"]
+[ext_resource type="Script" uid="uid://mtdn6ihe1bj3" path="res://addons/StyleboxFancy/inspector/corner editor container/curvature_preset_button.gd" id="8_f6m2c"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_stc0f"]
 

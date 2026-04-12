@@ -1,7 +1,7 @@
 @tool
 
 extends Theme
-class_name DynamicTheme
+class_name QuickTheme
 
 @export_tool_button("Update", "Callable") var update_button = update
 @export var font_color : Color
@@ -10,15 +10,15 @@ class_name DynamicTheme
 @export var background_stylebox : StyleBoxFancy
 
 ## The stylebox of elements, like the background of LineEdit, or Buttons.
-@export var element_stylebox : StyleBoxFancy
+@export var button_stylebox : StyleBoxFancy
 
 @export var foreground_stylebox : StyleBoxFancy
 
-@export var hover_override : ThemeOverride
-@export var select_override : ThemeOverride
-@export var disabled_override : ThemeOverride
+@export var hover_override : QuickThemeOverride
+@export var select_override : QuickThemeOverride
+@export var disabled_override : QuickThemeOverride
 
-func get_font_color(override : ThemeOverride) -> Color:
+func get_font_color(override : QuickThemeOverride) -> Color:
 	if !override:
 		print("Override is null")
 		return font_color
@@ -36,7 +36,7 @@ func get_color_override(color: Color, tint: Color, lighten: float):
 		result = result.darkened(abs(lighten))
 	return result
 
-func create_stylebox_override(base : StyleBoxFancy, override : ThemeOverride) -> StyleBoxFancy:
+func create_stylebox_override(base : StyleBoxFancy, override : QuickThemeOverride) -> StyleBoxFancy:
 	var result = base.duplicate_deep() as StyleBoxFancy
 	
 	if not override:
@@ -50,16 +50,16 @@ func create_stylebox_override(base : StyleBoxFancy, override : ThemeOverride) ->
 func update():
 	clear()
 	
-	if not element_stylebox:
-		element_stylebox = StyleBoxFancy.new()
+	if not button_stylebox:
+		button_stylebox = StyleBoxFancy.new()
 	if not background_stylebox:
 		background_stylebox = StyleBoxFancy.new()
 	if not foreground_stylebox:
 		foreground_stylebox = StyleBoxFancy.new()
 	
-	var element_stylebox_hover = create_stylebox_override(element_stylebox, hover_override)
-	var element_stylebox_selected = create_stylebox_override(element_stylebox, select_override)
-	var element_stylebox_disabled = create_stylebox_override(element_stylebox, disabled_override)
+	var button_stylebox_hover = create_stylebox_override(button_stylebox, hover_override)
+	var button_stylebox_selected = create_stylebox_override(button_stylebox, select_override)
+	var button_stylebox_disabled = create_stylebox_override(button_stylebox, disabled_override)
 
 	var font_color_hover = get_font_color(hover_override)
 	var font_color_selected = get_font_color(select_override)
@@ -86,13 +86,21 @@ func update():
 	set_stylebox("panel", "Panel", background_stylebox)
 	set_stylebox("panel", "PanelContainer", background_stylebox)
 	
-	set_stylebox("normal", "Button", element_stylebox)
-	set_stylebox("hover", "Button", element_stylebox_hover)
-	set_stylebox("pressed", "Button", element_stylebox_selected)
-	set_stylebox("disabled", "Button", element_stylebox_disabled)
+	set_stylebox("normal", "Button", button_stylebox)
+	set_stylebox("hover", "Button", button_stylebox_hover)
+	set_stylebox("pressed", "Button", button_stylebox_selected)
+	set_stylebox("disabled", "Button", button_stylebox_disabled)
 	
-	set_stylebox("panel", "TabContainer", foreground_stylebox)
-	set_stylebox("tab_selected", "TabContainer", foreground_stylebox)
+	var tab_container_panel = foreground_stylebox.duplicate_deep() as StyleBoxFancy
+	tab_container_panel.set_corner_radius(Corner.CORNER_TOP_LEFT, 0)
+	tab_container_panel.set_corner_radius(Corner.CORNER_TOP_RIGHT, 0)
+	
+	var tab_panel = foreground_stylebox.duplicate_deep() as StyleBoxFancy
+	tab_panel.set_corner_radius(Corner.CORNER_BOTTOM_LEFT, 0)
+	tab_panel.set_corner_radius(Corner.CORNER_BOTTOM_RIGHT, 0)
+	
+	set_stylebox("panel", "TabContainer", tab_container_panel)
+	set_stylebox("tab_selected", "TabContainer", tab_panel)
 
 	# Forground
 	set_stylebox("normal", "TextEdit", foreground_stylebox)
