@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b7b75mcbfl3w0"]
+[gd_scene load_steps=4 format=3 uid="uid://b7b75mcbfl3w0"]
 
 [ext_resource type="Script" uid="uid://cug2hr3ko8ctl" path="res://addons/StyleboxFancy/inspector/corner editor container/tooltip.gd" id="1_knud1"]
 

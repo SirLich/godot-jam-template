@@ -45,10 +45,10 @@ func _init() -> void:
 	add_child(ambient_sounds)
 	add_child(music)
 
-	self.sound_process_mode = PROCESS_MODE_PAUSABLE
-	self.ui_sound_process_mode = PROCESS_MODE_ALWAYS
-	self.ambient_sound_process_mode = PROCESS_MODE_ALWAYS
-	self.music_process_mode = PROCESS_MODE_ALWAYS
+	sound_process_mode = PROCESS_MODE_PAUSABLE
+	ui_sound_process_mode = PROCESS_MODE_ALWAYS
+	ambient_sound_process_mode = PROCESS_MODE_ALWAYS
+	music_process_mode = PROCESS_MODE_ALWAYS
 
 
 #region Sounds
@@ -58,14 +58,9 @@ func get_sound_volume() -> float:
 	return db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index(sound_effects.bus)))
 
 
-func get_ui_sound_volume() -> float:
-	return db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index(ui_sound_effects.bus)))
-
-
 func set_sound_volume(volume_between_0_and_1: float) -> void:
 	_show_shared_bus_warning()
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(sound_effects.bus), linear_to_db(volume_between_0_and_1))
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(ui_sound_effects.bus), linear_to_db(volume_between_0_and_1))
 
 
 func play_sound(resource: AudioStream, override_bus: String = "") -> AudioStreamPlayer:
@@ -73,13 +68,36 @@ func play_sound(resource: AudioStream, override_bus: String = "") -> AudioStream
 
 
 func play_sound_with_pitch(resource: AudioStream, pitch: float = 1.0, override_bus: String = "") -> AudioStreamPlayer:
-	var player = sound_effects.play(resource, override_bus)
+	var player: AudioStreamPlayer = sound_effects.play(resource, override_bus)
 	player.pitch_scale = pitch
 	return player
 
+func play(sound: Sound) -> AudioStreamPlayer:
+	var player: AudioStreamPlayer = sound_effects.play(sound.get_stream())
+	player.pitch_scale = sound.get_pitch()
+	player.volume_db = sound.get_volume()
+	return player
 
 func stop_sound(resource: AudioStream) -> void:
 	return sound_effects.stop(resource)
+
+
+func set_default_sound_bus(bus: String) -> void:
+	sound_effects.bus = bus
+
+
+#endregion
+
+#region UI sounds
+
+
+func get_ui_sound_volume() -> float:
+	return db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index(ui_sound_effects.bus)))
+
+
+func set_ui_sound_volume(volume_between_0_and_1: float) -> void:
+	_show_shared_bus_warning()
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(ui_sound_effects.bus), linear_to_db(volume_between_0_and_1))
 
 
 func play_ui_sound(resource: AudioStream, override_bus: String = "") -> AudioStreamPlayer:
@@ -87,17 +105,13 @@ func play_ui_sound(resource: AudioStream, override_bus: String = "") -> AudioStr
 
 
 func play_ui_sound_with_pitch(resource: AudioStream, pitch: float = 1.0, override_bus: String = "") -> AudioStreamPlayer:
-	var player = ui_sound_effects.play(resource, override_bus)
+	var player: AudioStreamPlayer = ui_sound_effects.play(resource, override_bus)
 	player.pitch_scale = pitch
 	return player
 
 
 func stop_ui_sound(resource: AudioStream) -> void:
 	return ui_sound_effects.stop(resource)
-
-
-func set_default_sound_bus(bus: String) -> void:
-	sound_effects.bus = bus
 
 
 func set_default_ui_sound_bus(bus: String) -> void:
@@ -184,7 +198,7 @@ func get_currently_playing_music() -> Array:
 
 
 func get_currently_playing_music_tracks() -> Array:
-	return music.get_current_tracks()
+	return music.get_currently_playing_tracks()
 
 
 func pause_music(resource: AudioStream = null) -> void:
@@ -209,6 +223,8 @@ func set_default_music_bus(bus: String) -> void:
 
 
 func _show_shared_bus_warning() -> void:
+	if "Master" in [music.bus, sound_effects.bus, ui_sound_effects.bus, ambient_sounds.bus]:
+		push_warning("Using the Master sound bus directly isn't recommended.")
 	if music.bus == sound_effects.bus or music.bus == ui_sound_effects.bus:
 		push_warning("Both music and sounds are using the same bus: %s" % music.bus)
 

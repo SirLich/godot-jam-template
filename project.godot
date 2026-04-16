@@ -29,8 +29,8 @@ manager/music/bus="Music"
 
 SceneManager="*res://src/jam_scene_manager.gd"
 Global="*res://src/global.gd"
-SoundManager="*uid://dspakd4xcmq6w"
 MusicManager="*uid://b3612i7nyqsva"
+SoundManager="*uid://6q1wagejt60k"
 
 [display]
 
@@ -40,7 +40,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/StyleBoxFancy/plugin.cfg", "res://addons/StyleboxFancy/plugin.cfg", "res://addons/editor_tweaks/plugin.cfg", "res://addons/markdownlabel/plugin.cfg", "res://addons/quick_theme/plugin.cfg", "res://addons/quicktheme/plugin.cfg", "res://addons/resonate/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/StyleBoxFancy/plugin.cfg", "res://addons/StyleboxFancy/plugin.cfg", "res://addons/clamor/plugin.cfg", "res://addons/editor_tweaks/plugin.cfg", "res://addons/markdownlabel/plugin.cfg", "res://addons/quick_theme/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
 
 [file_customization]
 

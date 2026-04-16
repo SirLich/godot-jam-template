@@ -1,8 +1,8 @@
 [gd_resource type="Theme" script_class="QuickTheme" format=3 uid="uid://cxoonedw1rmpt"]
 
 [ext_resource type="FontFile" uid="uid://dwr70xawbgxry" path="res://assets/fonts/Prototype.ttf" id="1_jf26r"]
-[ext_resource type="Script" uid="uid://cjmmhbp1b5312" path="res://addons/StyleboxFancy/StyleBorder.gd" id="2_7any1"]
-[ext_resource type="Script" uid="uid://bkl6g25jwb47h" path="res://addons/StyleboxFancy/StyleBoxFancy.gd" id="3_3fgq6"]
+[ext_resource type="Script" uid="uid://cjmmhbp1b5312" path="res://addons/StyleBoxFancy/StyleBorder.gd" id="2_7any1"]
+[ext_resource type="Script" uid="uid://bkl6g25jwb47h" path="res://addons/StyleBoxFancy/StyleBoxFancy.gd" id="3_3fgq6"]
 [ext_resource type="Script" uid="uid://dwfu18ld8erkk" path="res://addons/quick_theme/quick_theme_override.gd" id="4_7any1"]
 [ext_resource type="Script" uid="uid://b3qq46clndf2t" path="res://addons/quick_theme/quick_theme.gd" id="5_3fgq6"]
 

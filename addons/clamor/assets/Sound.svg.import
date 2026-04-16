@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1qswoa82s873"
-path="res://.godot/imported/tl.svg-e76a951613e58fc9e86fae4392094e2a.ctex"
+uid="uid://ccsr3d0yurota"
+path="res://.godot/imported/Sound.svg-23ca62d32d2a11853126aa9b8d266614.ctex"
 metadata={
-"has_editor_variant": true,
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/StyleBoxFancy/inspector/corner editor container/icons/tl.svg"
-dest_files=["res://.godot/imported/tl.svg-e76a951613e58fc9e86fae4392094e2a.ctex"]
+source_file="res://addons/clamor/assets/Sound.svg"
+dest_files=["res://.godot/imported/Sound.svg-23ca62d32d2a11853126aa9b8d266614.ctex"]
 
 [params]
 
@@ -40,5 +39,5 @@ process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
 svg/scale=1.0
-editor/scale_with_editor_scale=true
-editor/convert_colors_with_editor_theme=true
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

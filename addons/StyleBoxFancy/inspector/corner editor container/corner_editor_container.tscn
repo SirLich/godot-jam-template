@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://df2kverp315t8"]
+[gd_scene load_steps=16 format=3 uid="uid://df2kverp315t8"]
 
 [ext_resource type="Script" uid="uid://dsf52vsvsogxb" path="res://addons/StyleboxFancy/inspector/corner editor container/corner_editor_container.gd" id="1_r6tm4"]
 [ext_resource type="Script" uid="uid://cqtss7efnhjtg" path="res://addons/StyleboxFancy/inspector/corner editor container/tooltip_button.gd" id="2_f6m2c"]

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bfg02p5mw772"]
+
+[ext_resource type="Script" uid="uid://cel2vax8tyw67" path="res://addons/clamor/editor/inspector_plugin/sound_toolbar/sound_toolbar.gd" id="1_vd5b0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3sqe"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.8980392)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="SoundToolbar" type="PanelContainer" unique_id=1261683424 node_paths=PackedStringArray("stop_button", "play_from_start_button", "play_button", "time_label", "progress_slider")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f3sqe")
+script = ExtResource("1_vd5b0")
+stop_button = NodePath("HBoxContainer2/StopButton")
+play_from_start_button = NodePath("HBoxContainer2/PlayFromStartButton")
+play_button = NodePath("HBoxContainer2/PlayButton")
+time_label = NodePath("HBoxContainer2/TimeLabel")
+progress_slider = NodePath("HBoxContainer2/ProgressSlider")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=2078797529]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="StopButton" type="Button" parent="HBoxContainer2" unique_id=1089467803]
+layout_mode = 2
+tooltip_text = "Stop"
+theme_override_constants/h_separation = 0
+flat = true
+
+[node name="PlayFromStartButton" type="Button" parent="HBoxContainer2" unique_id=1859969750]
+layout_mode = 2
+tooltip_text = "Play from start"
+theme_override_constants/h_separation = 0
+flat = true
+
+[node name="PlayButton" type="Button" parent="HBoxContainer2" unique_id=1046576539]
+layout_mode = 2
+tooltip_text = "Play"
+theme_override_constants/h_separation = 0
+flat = true
+
+[node name="ProgressSlider" type="HSlider" parent="HBoxContainer2" unique_id=1460498083]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+
+[node name="TimeLabel" type="Label" parent="HBoxContainer2" unique_id=1294934258]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0.0"

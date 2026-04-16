@@ -1,10 +1,18 @@
 [[dependencies]]
-name = "resonate"
-url = "https://gitlab.com/widgitgaming/godot/resonate"
-version = "refs/heads/main"
-version_lock = "4b82794d015a176231bbfe39a100e68e9f3d0da1"
-destination = "addons/resonate"
-source = "addons/resonate"
+name = "clamor_sound_manager"
+url = "https://github.com/SirLich/godot-clamor"
+version = "main"
+version_lock = "0d1d8e16102b047619ad698da3123248dfc10c52"
+destination = "addons/sound_manager"
+source = "addons/sound_manager"
+
+[[dependencies]]
+name = "clamor"
+url = "https://github.com/SirLich/godot-clamor"
+version = "main"
+version_lock = "0d1d8e16102b047619ad698da3123248dfc10c52"
+destination = "addons/clamor"
+source = "addons/clamor"
 
 [[dependencies]]
 name = "editor-tweaks"
