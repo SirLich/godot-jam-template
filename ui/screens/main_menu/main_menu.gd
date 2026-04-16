@@ -4,7 +4,7 @@ class_name MainMenu
 @export var play_button : BaseButton
 @export var settings_button : BaseButton
 @export var credits_button : BaseButton
-@export var exit_button: TextureButton
+@export var exit_button: BaseButton
 
 
 func _ready() -> void:

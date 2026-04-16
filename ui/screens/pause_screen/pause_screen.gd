@@ -1,7 +1,7 @@
 extends Control
 
-@export var continue_button: TextureButton
-@export var main_menu_button: TextureButton
+@export var continue_button: BaseButton
+@export var main_menu_button: BaseButton
 
 func _ready() -> void:
 	continue_button.pressed.connect(on_continue_pressed)

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dubc1qild7qo7"]
 
 [ext_resource type="Script" uid="uid://ds3mvd8utsb67" path="res://ui/screens/pause_screen/pause_screen.gd" id="1_c0vf7"]
-[ext_resource type="PackedScene" uid="uid://bum01orwklqho" path="res://ui/elements/buttons/small_button.tscn" id="1_wiqq7"]
 
 [node name="PauseScreen" type="Control" unique_id=1064965017 node_paths=PackedStringArray("continue_button", "main_menu_button")]
 process_mode = 3
@@ -35,10 +34,10 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1822339210]
 layout_mode = 2
 
-[node name="ContinueButton" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2026460345 instance=ExtResource("1_wiqq7")]
+[node name="ContinueButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1028046819]
 layout_mode = 2
-label_text = "Continue"
+text = "Continue"
 
-[node name="MainMenuButton" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2092326901 instance=ExtResource("1_wiqq7")]
+[node name="MainMenuButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=445801971]
 layout_mode = 2
-label_text = "Main Menu"
+text = "Main Menu"
