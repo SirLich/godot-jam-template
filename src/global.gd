@@ -1,6 +1,6 @@
 extends Node
 
-var settings : JamSettings = load("res://resources/jam_settings.tres")
+var settings : JamSettings = load("res://resources/settings.tres")
 static var _preferences_path = "user://preferences.cfg"
 
 static func get_preferences() -> ConfigFile:

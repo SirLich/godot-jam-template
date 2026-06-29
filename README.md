@@ -45,3 +45,15 @@ The template comes with a settings file `res://jam_settings.tres` which other sy
 
 This plugin manages dependencies via [Hyrax](https://github.com/SirLich/hyrax). Dependencies have
 been inlined (checked into version control), but Hyrax can be used to update them if desired. See `hyrax.toml`.
+
+# Versions
+
+# 0.2.0
+
+- Save volume preferences into a file 
+- Add volume slider to pause menu
+- Renamed jam_settings to settings
+
+# 0.1.0
+
+The initial release of this template.
