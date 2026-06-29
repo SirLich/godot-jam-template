@@ -8,6 +8,8 @@ class_name MainMenu
 
 
 func _ready() -> void:
+	Global.initialize_from_user_preferences()
+	
 	play_button.pressed.connect(on_play_pressed)
 	settings_button.pressed.connect(on_settings_pressed)
 	credits_button.pressed.connect(on_credits_pressed)

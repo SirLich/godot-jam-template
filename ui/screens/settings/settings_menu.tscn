@@ -51,7 +51,6 @@ grow_vertical = 2
 
 [node name="MasterVolume" parent="VBoxContainer" unique_id=580081299 instance=ExtResource("4_wb1qp")]
 layout_mode = 2
-default_volume = 0.8
 bus_name = "Master"
 label_text = "Volume"
 
