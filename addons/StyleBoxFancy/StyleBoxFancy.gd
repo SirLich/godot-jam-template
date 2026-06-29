@@ -1,4 +1,5 @@
 @tool
+@icon("uid://ds1a2dtd5mvjg")
 extends StyleBox
 class_name StyleBoxFancy
 
@@ -24,6 +25,32 @@ const Curvatures = {
 	"Notch" = -7.0
 }
 
+enum TextureStretchMode {
+	## Scale to fit the node's bounding rectangle.
+	SCALE,
+	## The texture keeps its original size and stays in the bounding rectangle's top-left corner.
+	KEEP,
+	## The texture keeps its original size and stays centered in the node's bounding rectangle.
+	KEEP_CENTERED,
+	## Scale the texture to fit the node's bounding rectangle, but maintain the texture's aspect ratio.
+	KEEP_ASPECT,
+	## Scale the texture to fit the node's bounding rectangle, center it, and maintain its aspect ratio.
+	KEEP_ASPECT_CENTERED,
+	## Scale the texture so that the shorter side fits the bounding rectangle. The other side clips to the node's limits.
+	KEEP_ASPECT_COVERED,
+}
+
+enum TextureRepeatMode {
+	## The CanvasItem will inherit the filter from its parent.
+	INHERIT,
+	## Texture will not repeat.
+	DISABLED,
+	## Texture will repeat normally.
+	ENABLED,
+	## Texture will repeat in a 2×2 tiled mode, where elements at even positions are mirrored.
+	MIRROR
+}
+
 # Used to save each corner's geometry that is reused for each rounded rect generated
 # as it is scaled depending on the corner radius
 var _corner_geometry: Array[PackedVector2Array]
@@ -31,15 +58,9 @@ var _corner_geometry: Array[PackedVector2Array]
 #region Properties
 ## The background color of this stylebox.
 ## Modulates [member texture] if it is set.
-@export var color: Color = Color(0.6, 0.6, 0.6):
+@export var color: Color = Color(1.0, 1.0, 1.0, 1.0):
 	set(v):
 		color = v
-		emit_changed()
-
-## The background texture of this stylebox.
-@export var texture: Texture2D:
-	set(v):
-		texture = v
 		emit_changed()
 
 ## Toggles drawing the center of this stylebox.
@@ -66,6 +87,59 @@ var _corner_geometry: Array[PackedVector2Array]
 				border.changed.connect(emit_changed)
 		emit_changed()
 
+## @experimental
+## Overrides the [CanvasItem] material that uses this StyleBox. It accepts
+## [CanvasItemMaterial] and [ShaderMaterial] as valid materials. [br][br]
+##
+## [b]IMPORTANT:[/b] A texture MUST be set for both the background and borders for the
+## UVs to work, otherwise they will all be set to (0, 0). Also UVs are affected by
+## [member texture_stretch_mode] and [member texture_scale]. [br][br]
+##
+## Removing a material will also not inmediately update all nodes using it, reload
+## the scenes using them to update them.
+@export var material: Material:
+	set(v):
+		if v is CanvasItemMaterial or v is ShaderMaterial or v == null:
+			material = v
+			emit_changed()
+
+#region Texture
+@export_group("Texture", "texture_")
+## The background texture of this stylebox.
+@export var texture: Texture2D:
+	set(v):
+		texture = v
+		emit_changed()
+
+## Controls the texture behavior when resizing the stylebox.
+@export var texture_stretch_mode: TextureStretchMode:
+	set(v):
+		texture_stretch_mode = v
+		emit_changed()
+
+## Sets the repeating mode that the [member texture] will use,
+## by overriding the [CanvasItem] texture_repeat property. [br] [br]
+##
+## If set to [constant TextureRepeatMode.INHERIT] it will use the
+## [CanvasItem] texture_repeat property. [br] [br]
+##
+## [b]Note:[/b] When setting back to Inherit from another mode, it might not
+## update inmediately, in that case you need to set again the [CanvasItem]
+## texture_repeat property. [br] [br]
+##
+## [b]Note 2:[/b] The editor stylebox preview will absolutely ignore this property
+## and may appear different from the 2D scene.
+@export var texture_repeat: TextureRepeatMode:
+	set(v):
+		texture_repeat = v
+		emit_changed()
+
+## Scales the texture, its behaviour depends on [member texture_stretch_mode].
+@export var texture_scale: float = 1.0:
+	set(v):
+		texture_scale = max(v, 0.001)
+		emit_changed()
+#endregion
 
 #region Corners
 
@@ -136,7 +210,6 @@ var _corner_geometry: Array[PackedVector2Array]
 		emit_changed()
 #endregion
 
-
 #region Expand margins
 @export_group("Expand Margins", "expand_margin_")
 ## Expands the stylebox rect outside of the control rect on the left edge,
@@ -171,7 +244,6 @@ var _corner_geometry: Array[PackedVector2Array]
 		expand_margin_bottom = v
 		emit_changed()
 #endregion
-
 
 #region Shadow
 @export_group("Shadow", "shadow_")
@@ -214,7 +286,6 @@ var _corner_geometry: Array[PackedVector2Array]
 		emit_changed()
 #endregion
 
-
 #region Anti aliasing
 @export_group("Anti Aliasing", "anti_aliasing_")
 ## Makes the edges of the stylebox smoother.
@@ -244,13 +315,14 @@ func _property_can_revert(property: StringName) -> bool:
 		_:
 			return false
 
-func _property_get_revert(property: StringName):
+func _property_get_revert(property: StringName) -> Variant:
 	match property:
 		&"corner_radius_top_left", &"corner_radius_top_right", &"corner_radius_bottom_left", &"corner_radius_bottom_right":
 			return 0
 		&"corner_curvature_top_left", &"corner_curvature_top_right", &"corner_curvature_bottom_left", &"corner_curvature_bottom_right":
 			return 1
-	return 0
+		_:
+			return null
 #endregion
 
 #region Draw
@@ -365,7 +437,19 @@ func _get_points_from_rect(rect: Rect2) -> PackedVector2Array:
 	])
 
 
-func _draw_ring(to_canvas_item: RID, inner_rect: Rect2, outer_rect: Rect2, corner_radius: Vector4, ring_color: Color, ring_texture: Texture2D, texture_rect: Rect2, fade: bool, fade_inside: bool = false) -> void:
+func _draw_ring(
+	to_canvas_item: RID,
+	inner_rect: Rect2,
+	outer_rect: Rect2,
+	corner_radius: Vector4,
+	ring_color: Color,
+	ring_texture: Texture2D,
+	texture_rect: Rect2,
+	fade: bool,
+	fade_inside: bool = false,
+	texture_stretch_mode: TextureStretchMode = TextureStretchMode.SCALE,
+	texture_scale: float = 1) -> void:
+
 	if inner_rect.abs().encloses(outer_rect):
 		return
 
@@ -394,7 +478,7 @@ func _draw_ring(to_canvas_item: RID, inner_rect: Rect2, outer_rect: Rect2, corne
 			indices,
 			all_points,
 			colors,
-			_get_polygon_uv(all_points, texture_rect),
+			_get_polygon_uv(all_points, texture_rect, ring_texture, texture_stretch_mode, texture_scale),
 			PackedInt32Array(),
 			PackedFloat32Array(),
 			ring_texture.get_rid()
@@ -410,20 +494,33 @@ func _draw_ring(to_canvas_item: RID, inner_rect: Rect2, outer_rect: Rect2, corne
 	#RenderingServer.canvas_item_add_polyline(to_canvas_item, all_points, [Color.GREEN_YELLOW])
 
 
-func _draw_rect(to_canvas_item: RID, rect: Rect2, rect_color: Color, corner_radius: Vector4, aa: float, rect_texture: Texture2D = null, force_aa: bool = false) -> void:
+func _draw_rect(
+	to_canvas_item: RID,
+	rect: Rect2,
+	rect_color: Color,
+	corner_radius: Vector4,
+	aa: float,
+	rect_texture: Texture2D = null,
+	texture_stretch_mode: TextureStretchMode = TextureStretchMode.SCALE,
+	texture_scale: float = 1,
+	force_aa: bool = false) -> void:
+
 	# Simple rect check
-	if not corner_radius and not force_aa:
-		if rect_texture:
-			RenderingServer.canvas_item_add_texture_rect(to_canvas_item, rect, rect_texture.get_rid(), false, rect_color)
-		else:
+	if not corner_radius and not force_aa and false:
+		if not rect_texture:
 			RenderingServer.canvas_item_add_rect(to_canvas_item, rect, rect_color)
-		return
+			return
+
+		if rect_texture and texture_stretch_mode == TextureStretchMode.SCALE:
+			RenderingServer.canvas_item_add_texture_rect(to_canvas_item, rect, rect_texture.get_rid(), false, rect_color)
+			return
 
 	# Rounded rect
 	var center_rect: Rect2 = rect
 	var center_corner_radius: Vector4 = _fit_corner_radius_in_rect(corner_radius, center_rect)
 
-	if aa != 0: # if antialiasing
+	# Anti aliasing
+	if aa != 0 and corner_radius:
 		var inner_rect: Rect2 = rect.grow(-aa * 0.5)
 		# NOTE: Godot will report an error in rect.expand when its size is negative
 		# but will work anyways :/
@@ -440,7 +537,10 @@ func _draw_rect(to_canvas_item: RID, rect: Rect2, rect_color: Color, corner_radi
 			rect_color,
 			rect_texture,
 			rect,
-			true
+			true,
+			false,
+			texture_stretch_mode,
+			texture_scale
 		)
 		#_draw_debug_rect(to_canvas_item, inner_rect)
 
@@ -450,11 +550,12 @@ func _draw_rect(to_canvas_item: RID, rect: Rect2, rect_color: Color, corner_radi
 	var points: PackedVector2Array = _get_rounded_rect(center_rect, center_corner_radius)
 
 	if rect_texture != null:
+		var uvs: PackedVector2Array = _get_polygon_uv(points, rect, texture, texture_stretch_mode, texture_scale)
 		RenderingServer.canvas_item_add_polygon(
 			to_canvas_item,
 			points,
 			[rect_color],
-			_get_polygon_uv(points, rect),
+			uvs,
 			rect_texture.get_rid()
 		)
 	else:
@@ -480,8 +581,8 @@ func _draw_border(to_canvas_item: RID, rect: Rect2, border: StyleBorder, corner_
 	if not outer_rect.has_area():
 		return
 
+	# If interior is filled just draw a rect
 	if not inner_rect.has_area() and not border.blend:
-		# Since it is filled, drawing just the rect is more performant
 		_draw_rect(
 			to_canvas_item,
 			outer_rect,
@@ -492,7 +593,8 @@ func _draw_border(to_canvas_item: RID, rect: Rect2, border: StyleBorder, corner_
 		)
 		return
 
-	if anti_aliasing:
+	# Adjustments for AA
+	if corner_radius and anti_aliasing:
 		var antialiasing_sides: Vector4 = Vector4(
 			anti_aliasing_size if border.width_left else 0.0,
 			anti_aliasing_size if border.width_top else 0.0,
@@ -613,11 +715,9 @@ func _triangulate_ring(outer_size: int, inner_size: int, outer_corner_radii: Vec
 			else:
 				# Fill using quads
 				for i in corner_detail:
-					@warning_ignore_start("confusable_local_declaration") # Yeah I know
 					var next_inner: int = (inner_idx + 1) % inner_size
 					var next_outer: int = (outer_idx + 1) % outer_size + inner_size
 					var curr_outer: int = outer_idx + inner_size
-					@warning_ignore_restore("confusable_local_declaration")
 
 					triangles[tri_idx] = inner_idx
 					triangles[tri_idx + 1] = curr_outer
@@ -673,8 +773,8 @@ func _get_sides_width_from_rects(inner_rect: Rect2, outer_rect: Rect2) -> Vector
 	return Vector4(
 		inner_rect.position.x - outer_rect.position.x,
 		inner_rect.position.y - outer_rect.position.y,
-		(outer_rect.position.x + outer_rect.size.x) - (inner_rect.position.x + inner_rect.size.x),
-		(outer_rect.position.y + outer_rect.size.y) - (inner_rect.position.y + inner_rect.size.y)
+		outer_rect.end.x - inner_rect.end.x,
+		outer_rect.end.y - inner_rect.end.y
 	)
 
 
@@ -696,13 +796,77 @@ func _adjust_corner_radius(corner_radius: Vector4, sides_width: Vector4, grow: b
 			max(0, corner_radius[3] - min(sides_width[3], sides_width[0]) * sqrt(pow(2, corner_curvature_bottom_left - 1)))
 		)
 
+func _get_polygon_uv(
+	polygon: PackedVector2Array,
+	rect: Rect2,
+	texture: Texture2D,
+	mode: TextureStretchMode = TextureStretchMode.SCALE,
+	texture_scale: float = 1
+	) -> PackedVector2Array:
 
-func _get_polygon_uv(polygon: PackedVector2Array, rect: Rect2) -> PackedVector2Array:
-	var uv: PackedVector2Array
-	uv.resize(polygon.size())
-	for point_idx in polygon.size():
-		uv[point_idx] = (polygon[point_idx] - rect.position) / rect.size
-	return uv
+	var uvs: PackedVector2Array
+	uvs.resize(polygon.size())
+	var tex_size = texture.get_size()
+	var rect_size = rect.size
+
+	var scale: Vector2 = Vector2.ONE
+	var offset: Vector2 = Vector2.ZERO
+
+	match mode:
+		TextureStretchMode.SCALE:
+			scale = Vector2.ONE
+			scale /= texture_scale
+
+		TextureStretchMode.KEEP:
+			scale = rect_size / tex_size
+			scale /= texture_scale
+
+		TextureStretchMode.KEEP_CENTERED:
+			scale = rect_size / tex_size
+			scale /= texture_scale
+
+			offset = (Vector2.ONE - scale) * 0.5
+
+		TextureStretchMode.KEEP_ASPECT:
+			var tex_aspect: float = tex_size.x / tex_size.y
+			var rect_aspect: float = rect_size.x / rect_size.y
+
+			if tex_aspect > rect_aspect:
+				scale = Vector2(1, 1 / rect_aspect)
+			else:
+				scale = Vector2(rect_aspect, 1)
+			scale /= texture_scale
+
+		TextureStretchMode.KEEP_ASPECT_CENTERED:
+			var tex_aspect: float = tex_size.x / tex_size.y
+			var rect_aspect: float = rect_size.x / rect_size.y
+
+			if tex_aspect > rect_aspect:
+				scale = Vector2(1, 1 / rect_aspect)
+			else:
+				scale = Vector2(rect_aspect, 1)
+			scale /= texture_scale
+
+			offset = (Vector2.ONE - scale) * 0.5
+
+		TextureStretchMode.KEEP_ASPECT_COVERED:
+			var tex_aspect: float = tex_size.x / tex_size.y
+			var rect_aspect: float = rect_size.x / rect_size.y
+
+			if tex_aspect > rect_aspect:
+				scale = Vector2(rect_aspect, 1)
+			else:
+				scale = Vector2(1, 1 / rect_aspect)
+			scale /= texture_scale
+			offset = (Vector2.ONE - scale) * 0.5
+
+	for i in polygon.size():
+		var uv: Vector2 = (polygon[i] - rect.position) / rect.size
+		uv = uv * scale + offset
+
+		uvs[i] = uv
+
+	return uvs
 
 
 func _fit_corner_radius_in_rect(corners: Vector4, rect: Rect2) -> Vector4:
@@ -726,7 +890,7 @@ func _draw_debug_rect(to_canvas_item, rect) -> void:
 	var points = _get_points_from_rect(rect)
 	RenderingServer.canvas_item_add_polyline(to_canvas_item, points, [Color.AQUA])
 
-func _draw_debug_polygon(to_canvas_item: RID, polygon: PackedVector2Array):
+func _draw_debug_polygon(to_canvas_item: RID, polygon: PackedVector2Array) -> void:
 	RenderingServer.canvas_item_add_polyline(to_canvas_item, polygon, [Color.AQUA])
 	RenderingServer.canvas_item_add_circle(to_canvas_item, polygon[0], 1, Color.RED)
 	RenderingServer.canvas_item_add_circle(to_canvas_item, polygon[-1], 1, Color.BLUE)
@@ -758,9 +922,20 @@ func _draw(to_canvas_item: RID, rect: Rect2) -> void:
 
 	_generate_corner_geometry(corner_curvatures)
 
+	if texture_repeat != TextureRepeatMode.INHERIT:
+		RenderingServer.canvas_item_set_default_texture_repeat(
+			to_canvas_item,
+			texture_repeat as RenderingServer.CanvasItemTextureRepeat
+		)
+
 	# Skew
 	var transform := Transform2D(Vector2(1, -skew.y), Vector2(-skew.x, 1), Vector2(rect.size.y * skew.x * 0.5, rect.size.x * skew.y * 0.5))
 	RenderingServer.canvas_item_add_set_transform(to_canvas_item, transform)
+
+	# Material
+	if material:
+		RenderingServer.canvas_item_set_material(to_canvas_item, material)
+
 
 	if shadow_enabled:
 		var shadow_rect: Rect2 = rect.grow(shadow_blur * 0.5)
@@ -780,6 +955,8 @@ func _draw(to_canvas_item: RID, rect: Rect2) -> void:
 				corner_radii,
 				shadow_blur,
 				shadow_texture,
+				TextureStretchMode.SCALE,
+				1,
 				true
 			)
 
@@ -790,7 +967,9 @@ func _draw(to_canvas_item: RID, rect: Rect2) -> void:
 			color,
 			corner_radii,
 			anti_aliasing_size if anti_aliasing else 0.0,
-			texture
+			texture,
+			texture_stretch_mode,
+			texture_scale
 		)
 
 	if borders:

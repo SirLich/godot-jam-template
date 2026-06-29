@@ -2,7 +2,6 @@
 extends VBoxContainer
 class_name CornerEditorContainer
 
-signal linked_corners
 signal property_changed(value: float, property: StringName)
 signal property_reverted(property: StringName)
 signal multi_property_changed(values: Array, properties: Array[StringName])
@@ -35,6 +34,9 @@ const CORNER_STRINGNAMES: Array[StringName] = [
 @export var curvature_controls: Control
 @export var link_button: Button
 @export var properties_dict: Dictionary[Node, CornerStringNames]
+@export var editable_controls: Array[Node]
+
+static var linked_corners: bool = true
 
 # NOTE: Accidentaly managed to instance a EditorSpinSlider inside the scene
 # so I don't need to generate them anymore, but I'll leave this just in case
@@ -54,8 +56,8 @@ func _get_edited_property_from_node(node: Node) -> StringName:
 		return CORNER_STRINGNAMES[properties_dict[node]]
 	return ""
 
-func _property_changed(value: float, property: StringName):
-	if link_button.button_pressed:
+func _property_changed(value: float, property: StringName) -> void:
+	if linked_corners:
 		var values: Array
 		values.resize(4)
 		values.fill(value)
@@ -72,7 +74,7 @@ func _property_changed(value: float, property: StringName):
 		property_changed.emit(value, property)
 
 func _property_revert(property: StringName) -> void:
-	if link_button.button_pressed:
+	if linked_corners:
 		# NOTE: Only corner radius have a revert button
 		var properties: Array[StringName]
 		properties.assign(CORNER_STRINGNAMES.slice(0, 4))
@@ -80,8 +82,9 @@ func _property_revert(property: StringName) -> void:
 	else:
 		property_reverted.emit(property)
 
-func _ready():
+func _ready() -> void:
 	_on_radius_tab_button_pressed()
+	link_button.button_pressed = linked_corners
 
 	# Set themes
 	var editor_theme = EditorInterface.get_editor_theme()
@@ -98,9 +101,8 @@ func _ready():
 			if not node.pressed.is_connected(_property_revert):
 				node.pressed.connect(_property_revert.bind(property))
 
-
-func _on_link_button_pressed() -> void:
-	linked_corners.emit()
+func _on_link_button_toggled(toggled_on: bool):
+	linked_corners = toggled_on
 
 func _on_radius_tab_button_pressed() -> void:
 	radius_controls.show()
@@ -111,11 +113,6 @@ func _on_curvature_tab_button_pressed() -> void:
 	curvature_controls.show()
 
 
-func is_linked() -> bool:
-	if link_button == null:
-		return false
-	return link_button.button_pressed
-
 func set_all_properties(stylebox: StyleBoxFancy) -> void:
 	if stylebox == null: return
 
@@ -125,3 +122,11 @@ func set_all_properties(stylebox: StyleBoxFancy) -> void:
 			node.set_value_no_signal(stylebox.get(property))
 		if node is Button:
 			node.disabled = !stylebox.property_can_revert(property)
+
+func set_read_only(read_only: bool) -> void:
+	for node: Node in editable_controls:
+		if node is EditorSpinSlider:
+			node.read_only = read_only
+
+		elif node is Button:
+			node.disabled = read_only

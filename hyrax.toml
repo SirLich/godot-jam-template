@@ -24,8 +24,8 @@ source = "addons/editor_tweaks"
 
 [[dependencies]]
 name = "stylebox-fancy"
-url = "https://github.com/SirLich/StyleBoxFancy.git"
+url = "https://github.com/MellowDye/StyleBoxFancy"
 version = "main"
-version_lock = "8d0a6a75713f3d4a58a9af096b96e09d3b839b95"
+version_lock = "9ef4c056072e92cb9fba1fedc31b00260a9a43f0"
 destination = "addons/StyleBoxFancy"
 source = "addons/StyleBoxFancy"
