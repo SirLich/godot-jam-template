@@ -250,6 +250,7 @@ func _property_get_revert(property: StringName):
 			return 0
 		&"corner_curvature_top_left", &"corner_curvature_top_right", &"corner_curvature_bottom_left", &"corner_curvature_bottom_right":
 			return 1
+	return 0
 #endregion
 
 #region Draw
