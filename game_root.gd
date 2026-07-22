@@ -1,5 +1,5 @@
 extends Node
-class_name Game
+class_name GameRoot
 
 @export var default_scene : PackedScene
 

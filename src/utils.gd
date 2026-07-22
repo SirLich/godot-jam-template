@@ -61,6 +61,9 @@ static func get_children_recursive(parent: Node) -> Array[Node]:
 	
 	return result
 
+static func get_game() -> Game:
+	return get_first_of_type(Game)
+	
 static func get_first_of_type(type : Script):
 	for child in get_children_recursive(Engine.get_main_loop().root):
 		if is_instance_of(child, type):
@@ -71,7 +74,15 @@ static func wait(time : float):
 
 static func get_tree_static() -> SceneTree:
 	return Engine.get_main_loop().root.get_tree()
-	
+
+## Generates a "pretty" random color
+static func generate_random_hsv_color() -> Color:
+	return Color.from_hsv(
+		randf(), # Hue
+		randf_range(0.2, 0.6), # Saturation
+		randf_range(0.9, 1.0), # Brightness
+	)
+
 class Triangle:
 	var _p1 : Vector2
 	var _p2 : Vector2
