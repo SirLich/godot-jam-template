@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bkl6g25jwb47h" path="res://addons/StyleBoxFancy/StyleBoxFancy.gd" id="3_3fgq6"]
 [ext_resource type="Script" uid="uid://b3qq46clndf2t" path="res://addons/quick_theme/quick_theme.gd" id="5_3fgq6"]
 
-[sub_resource type="StyleBox" id="StyleBox_6lx7k"]
+[sub_resource type="StyleBox" id="StyleBox_2j8s8"]
 resource_local_to_scene = false
 resource_name = ""
 content_margin_left = -1.0
@@ -12,15 +12,7 @@ content_margin_top = -1.0
 content_margin_right = -1.0
 content_margin_bottom = -1.0
 script = ExtResource("3_3fgq6")
-
-[sub_resource type="StyleBox" id="StyleBox_iqtc0"]
-resource_local_to_scene = false
-resource_name = ""
-content_margin_left = -1.0
-content_margin_top = -1.0
-content_margin_right = -1.0
-content_margin_bottom = -1.0
-script = ExtResource("3_3fgq6")
+color = Color(0.47553682, 0.47553688, 0.47553682, 1)
 
 [sub_resource type="StyleBox" id="StyleBox_3fgq6"]
 resource_local_to_scene = false
@@ -31,14 +23,7 @@ content_margin_right = -1.0
 content_margin_bottom = -1.0
 script = ExtResource("3_3fgq6")
 
-[sub_resource type="StyleBox" id="StyleBox_7any1"]
-resource_local_to_scene = false
-resource_name = ""
-content_margin_left = -1.0
-content_margin_top = -1.0
-content_margin_right = -1.0
-content_margin_bottom = -1.0
-script = ExtResource("3_3fgq6")
+[sub_resource type="GDScript" id="GDScript_qijjd"]
 
 [sub_resource type="StyleBox" id="StyleBox_rtqkv"]
 resource_local_to_scene = false
@@ -49,68 +34,8 @@ content_margin_right = -1.0
 content_margin_bottom = -1.0
 script = ExtResource("3_3fgq6")
 
-[sub_resource type="StyleBox" id="StyleBox_y5ki2"]
-resource_local_to_scene = false
-resource_name = ""
-content_margin_left = -1.0
-content_margin_top = -1.0
-content_margin_right = -1.0
-content_margin_bottom = -1.0
-script = ExtResource("3_3fgq6")
-
-[sub_resource type="StyleBox" id="StyleBox_2j8s8"]
-resource_local_to_scene = false
-resource_name = ""
-content_margin_left = -1.0
-content_margin_top = -1.0
-content_margin_right = -1.0
-content_margin_bottom = -1.0
-script = ExtResource("3_3fgq6")
-
-[sub_resource type="StyleBox" id="StyleBox_47c11"]
-resource_local_to_scene = false
-resource_name = ""
-content_margin_left = -1.0
-content_margin_top = -1.0
-content_margin_right = -1.0
-content_margin_bottom = -1.0
-script = ExtResource("3_3fgq6")
-
-[sub_resource type="StyleBox" id="StyleBox_mo6nk"]
-resource_local_to_scene = false
-resource_name = ""
-content_margin_left = -1.0
-content_margin_top = -1.0
-content_margin_right = -1.0
-content_margin_bottom = -1.0
-script = ExtResource("3_3fgq6")
-
 [resource]
-Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_disabled_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(0, 0, 0, 1)
-Button/styles/disabled = SubResource("StyleBox_6lx7k")
-Button/styles/hover = SubResource("StyleBox_iqtc0")
-Button/styles/normal = SubResource("StyleBox_3fgq6")
-Button/styles/pressed = SubResource("StyleBox_7any1")
-Label/colors/font_color = Color(0, 0, 0, 1)
-LineEdit/colors/font_color = Color(0, 0, 0, 1)
-LineEdit/colors/font_uneditable_color = Color(0, 0, 0, 1)
-LineEdit/styles/normal = SubResource("StyleBox_rtqkv")
-LineEdit/styles/read_only = SubResource("StyleBox_y5ki2")
-Panel/styles/panel = SubResource("StyleBox_2j8s8")
-PanelContainer/styles/panel = SubResource("StyleBox_2j8s8")
-PopupMenu/styles/panel = SubResource("StyleBox_rtqkv")
-TabContainer/colors/font_disabled_color = Color(0, 0, 0, 1)
-TabContainer/colors/font_hovered_color = Color(0, 0, 0, 1)
-TabContainer/colors/font_selected_color = Color(0, 0, 0, 1)
-TabContainer/styles/panel = SubResource("StyleBox_47c11")
-TabContainer/styles/tab_selected = SubResource("StyleBox_mo6nk")
-TextEdit/colors/font_color = Color(0, 0, 0, 1)
-TextEdit/colors/font_readonly_color = Color(0, 0, 0, 1)
-TextEdit/styles/normal = SubResource("StyleBox_rtqkv")
-TextEdit/styles/read_only = SubResource("StyleBox_y5ki2")
+ColorPicker/colors/focused_not_editing_cursor_color = Color(0.8657345, 0.16258487, 0.61323243, 1)
 script = ExtResource("5_3fgq6")
 background_stylebox = SubResource("StyleBox_2j8s8")
 button_stylebox = SubResource("StyleBox_3fgq6")

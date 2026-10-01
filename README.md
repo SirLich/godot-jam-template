@@ -52,7 +52,8 @@ been inlined (checked into version control), but Hyrax can be used to update the
 
 - Renamed 'jam_scene_manager' to scene_manager
 - Fixed markdown files not being exported properly
-- 
+- Added margins to quick theme
+- Added ability to clear quick theme properties while preserving custom properties
 
 # 0.2.0
 

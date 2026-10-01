@@ -15,7 +15,7 @@ Compatible with **Godot 4.2+**. Contains uid files for Godot 4.4+.
   - [Links](#links)
   - [Images](#images)
   - [Lists](#lists)
-    - [Task list items (checkboxes)](#task-list-items)
+	- [Task list items (checkboxes)](#task-list-items)
   - [Tables](#tables)
   - [Escaping characters](#escaping-characters)
   - [Advanced usage](#advanced-usage)
