@@ -48,6 +48,12 @@ been inlined (checked into version control), but Hyrax can be used to update the
 
 # Versions
 
+# 0.3.0
+
+- Renamed 'jam_scene_manager' to scene_manager
+- Fixed markdown files not being exported properly
+- 
+
 # 0.2.0
 
 - Save volume preferences into a file 

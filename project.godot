@@ -27,7 +27,7 @@ manager/music/bus="Music"
 
 [autoload]
 
-SceneManager="*res://src/jam_scene_manager.gd"
+SceneManager="*res://src/scene_manager.gd"
 Global="*res://src/global.gd"
 MusicManager="*uid://b3612i7nyqsva"
 SoundManager="*uid://6q1wagejt60k"
