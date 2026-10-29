@@ -1,23 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://kooj48w3d6nc"]
+[gd_scene format=3 uid="uid://kooj48w3d6nc"]
 
-[ext_resource type="Script" uid="uid://dedpoylf8arqt" path="res://addons/create_actor/create_actor_popup.gd" id="1_qjgl7"]
+[ext_resource type="Script" uid="uid://dedpoylf8arqt" path="res://addons/editor_tweaks/create_actor_popup.gd" id="1_qjgl7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjgl7"]
 bg_color = Color(0.211765, 0.239216, 0.290196, 1)
 
-[sub_resource type="Image" id="Image_qjgl7"]
-data = {
-"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 184, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 181, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 73, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 181, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 181, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 180, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-"format": "RGBA8",
-"height": 16,
-"mipmaps": false,
-"width": 16
+[sub_resource type="DPITexture" id="DPITexture_rj8tl"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#e0e0e0\" d=\"M2 2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-4a1 1 0 0 1-1-1V3a1 1 0 0 0-1-1z\"/></svg>
+"
+base_scale = 1.25
+saturation = 2.0
+color_map = {
+Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
+Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
+Color(1, 0.8666667, 0.39607844, 1): Color(0.83, 0.78, 0.62, 1)
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_slkm0"]
-image = SubResource("Image_qjgl7")
-
-[node name="CreateActorPopup" type="Popup" node_paths=PackedStringArray("create_button", "cancel_button", "path_line_edit", "actor_line_edit", "create_folder", "script_type", "select_folder_button")]
+[node name="CreateActorPopup" type="Popup" unique_id=204964116 node_paths=PackedStringArray("create_button", "cancel_button", "path_line_edit", "actor_line_edit", "create_folder", "script_type", "select_folder_button")]
+oversampling_override = 1.0
 title = "Create"
 initial_position = 1
 size = Vector2i(370, 315)
@@ -36,7 +36,7 @@ create_folder = NodePath("Root/MarginContainer/Container/CreateFolder")
 script_type = NodePath("Root/MarginContainer/Container/ScriptType")
 select_folder_button = NodePath("Root/MarginContainer/Container/HBoxContainer2/SelectFolder")
 
-[node name="Root" type="Panel" parent="."]
+[node name="Root" type="Panel" parent="." unique_id=1165434222]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -44,7 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qjgl7")
 
-[node name="MarginContainer" type="MarginContainer" parent="Root"]
+[node name="MarginContainer" type="MarginContainer" parent="Root" unique_id=851234307]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,39 +56,38 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="Container" type="VBoxContainer" parent="Root/MarginContainer"]
+[node name="Container" type="VBoxContainer" parent="Root/MarginContainer" unique_id=1290376423]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PathLabel" type="Label" parent="Root/MarginContainer/Container"]
+[node name="PathLabel" type="Label" parent="Root/MarginContainer/Container" unique_id=993877639]
 layout_mode = 2
 text = "Path:"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Root/MarginContainer/Container"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Root/MarginContainer/Container" unique_id=220276853]
 layout_mode = 2
 
-[node name="PathLineEdit" type="LineEdit" parent="Root/MarginContainer/Container/HBoxContainer2"]
+[node name="PathLineEdit" type="LineEdit" parent="Root/MarginContainer/Container/HBoxContainer2" unique_id=987128697]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="SelectFolder" type="Button" parent="Root/MarginContainer/Container/HBoxContainer2"]
+[node name="SelectFolder" type="Button" parent="Root/MarginContainer/Container/HBoxContainer2" unique_id=736727513]
 layout_mode = 2
-icon = SubResource("ImageTexture_slkm0")
+icon = SubResource("DPITexture_rj8tl")
 
-[node name="BasePathLabel" type="Label" parent="Root/MarginContainer/Container"]
+[node name="BasePathLabel" type="Label" parent="Root/MarginContainer/Container" unique_id=673569960]
 layout_mode = 2
 text = "Actor name:"
 
-[node name="LineEdit" type="LineEdit" parent="Root/MarginContainer/Container"]
+[node name="LineEdit" type="LineEdit" parent="Root/MarginContainer/Container" unique_id=736870173]
 layout_mode = 2
 placeholder_text = "new actor"
 
-[node name="CreateFolder" type="CheckBox" parent="Root/MarginContainer/Container"]
+[node name="CreateFolder" type="CheckBox" parent="Root/MarginContainer/Container" unique_id=1470766224]
 layout_mode = 2
-button_pressed = true
 text = "Create Folder"
 
-[node name="ScriptType" type="OptionButton" parent="Root/MarginContainer/Container"]
+[node name="ScriptType" type="OptionButton" parent="Root/MarginContainer/Container" unique_id=1179129501]
 layout_mode = 2
 size_flags_horizontal = 0
 selected = 0
@@ -100,20 +99,20 @@ popup/item_1/id = 0
 popup/item_2/text = "None"
 popup/item_2/id = 2
 
-[node name="Control2" type="Control" parent="Root/MarginContainer/Container"]
+[node name="Control2" type="Control" parent="Root/MarginContainer/Container" unique_id=1677035758]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Root/MarginContainer/Container"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Root/MarginContainer/Container" unique_id=1953323615]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/separation = 50
 
-[node name="CreateButton" type="Button" parent="Root/MarginContainer/Container/HBoxContainer"]
+[node name="CreateButton" type="Button" parent="Root/MarginContainer/Container/HBoxContainer" unique_id=782599546]
 layout_mode = 2
 text = "Create"
 
-[node name="CancelButton" type="Button" parent="Root/MarginContainer/Container/HBoxContainer"]
+[node name="CancelButton" type="Button" parent="Root/MarginContainer/Container/HBoxContainer" unique_id=1981996603]
 layout_mode = 2
 text = "Cancel"

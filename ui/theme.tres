@@ -23,7 +23,7 @@ content_margin_right = -1.0
 content_margin_bottom = -1.0
 script = ExtResource("3_3fgq6")
 
-[sub_resource type="GDScript" id="GDScript_qijjd"]
+[sub_resource type="GDScript" id="GDScript_6lx7k"]
 
 [sub_resource type="StyleBox" id="StyleBox_rtqkv"]
 resource_local_to_scene = false
